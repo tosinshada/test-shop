@@ -19,5 +19,10 @@ module.exports = defineConfig({
   },
   admin: {
     backendUrl: process.env.MEDUSA_BACKEND_URL,
+    vite: () => ({
+      server: {
+        allowedHosts: [process.env.BASE_HOST],
+      },
+    }),
   }
 })

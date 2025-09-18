@@ -10,9 +10,12 @@ services:
       - "9000:9000"
     environment:
       - NODE_ENV=development
+      - DATABASE_URL=postgres://root:Wpg22nLnTY7NhFQM6H4KscmA8NsT2Arsf4@db:5432/medusa-test-shop
       - STORE_CORS=http://localhost:8000,https://docs.medusajs.com
-      - ADMIN_CORS=http://localhost:5173,http://localhost:9000,https://docs.medusajs.com
-      - AUTH_CORS=http://localhost:5173,http://localhost:9000,http://localhost:8000,https://docs.medusajs.com
+      - ADMIN_CORS=http://localhost:5173,http://localhost:9000,https://docs.medusajs.com,https://test-shop.thezentra.com
+      - AUTH_CORS=http://localhost:5173,http://localhost:9000,http://localhost:8000,https://docs.medusajs.com,https://test-shop.thezentra.com
+      - MEDUSA_BACKEND_URL=https://test-shop.thezentra.com
+      - BASE_HOST=https://test-shop.thezentra.com
     env_file:
       - .env
     volumes:

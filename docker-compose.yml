@@ -18,8 +18,8 @@ services:
     env_file:
       - .env
     networks:
-      - medusa_network
+      - maybe_maybe_net
 
 networks:
-  medusa_network:
-    driver: bridge
+  maybe_maybe_net:
+    external: true

@@ -1,5 +1,41 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
+  <a href="https://www.medusaLearn more about [Medusa's architecture](https://docs.medusajs.com/learn/introduction/architecture) and [commerce modules](https://docs.medusajs.com/learn/fundamentals/modules/commerce-modules) in the Docs.
+
+## Docker Setup
+
+This project supports both development and production Docker setups:
+
+### Production (GitHub Container Registry)
+The application is automatically built and published to GitHub Container Registry on every push to main/develop branches.
+
+```bash
+# Run using pre-built image from GitHub Container Registry
+npm run docker:up
+
+# Stop the containers
+npm run docker:down
+```
+
+### Development (Local Build)
+For development with hot reloading and volume mounts:
+
+```bash
+# Build and run locally with development setup
+npm run docker:dev:up
+
+# Stop the development containers
+npm run docker:dev:down
+```
+
+### GitHub Actions
+The project includes a GitHub Actions workflow (`.github/workflows/docker-publish.yml`) that:
+- Builds multi-platform Docker images (linux/amd64, linux/arm64)
+- Pushes to GitHub Container Registry (`ghcr.io`)
+- Runs on push to main/develop branches and tags
+- Uses Docker layer caching for faster builds
+
+The published images are available at: `ghcr.io/tosinshada/test-shop`
+.com">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
